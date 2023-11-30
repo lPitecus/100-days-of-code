@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Cafes de Natal{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center ">
+    <div class="container">
+        <h1 class="display-4">☕️ Cafeterias em Natal ☕️</h1>
+        <p class="lead">Está procurando onde usar seu notebook em público e parecer que tem um emprego?</p>
+        <hr class="my-4">
+        <p>Você achou o site perfeito! Aqui tenho uma lista mostrando as cafeterias que encontrei pela cidade e que
+            avaliei pelos seguintes aspectos:</p>
+        <div>
+            <ul style="display: inline-block; text-align: left">
+                <li>Qualidade do Café</li>
+                <li>Qualidade da Comida</li>
+                <li>Qualidade da internet</li>
+            </ul>
+        </div>
+
+        <a class="btn btn-warning btn-lg" href="{{ url_for('cafes') }}" role="button">Me mostre!</a>
+    </div>
+</div>
+
+{% endblock %}

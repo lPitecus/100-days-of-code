@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title%}Editing page{% endblock %}
+{% block content%}
+    <h2>Book Name: {{ book.title }}</h2>
+    <h3>Current Rating: {{ book.rating }}</h3>
+    <form action="" method="POST">
+        <input type="text" name="change" placeholder="New Rating"/>
+        <button type="submit">Change Rating</button>
+    </form>
+{% endblock %}

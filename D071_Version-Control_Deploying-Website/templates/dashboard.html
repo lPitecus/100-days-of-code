@@ -1,0 +1,32 @@
+{% include "header.html" %}
+
+<!-- Page Header-->
+<header
+  class="masthead"
+  style="background-image: url('../static/assets/img/home-bg.jpg')"
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1>Centro do Chefe</h1>
+          <span class="subheading">Página de administração dos autores no blog</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+        <ul>
+        {% for user in users %}
+            <li>{{ user.name }} | {{ user.email }} {% if not user.is_admin and user.id != 1 %}<a href="{{ url_for('make_admin', user_id=user.id) }}">| Make Admin</a>{% endif %}</li>
+        {% endfor %}
+        </ul>
+    </div>
+  </div>
+</div>
+
+{% include "footer.html" %}
